@@ -1,0 +1,56 @@
+﻿@inherits LayoutComponentBase
+@inject UiState UiState
+
+@implements IDisposable
+
+<div class="page@(collapseNavMenu ? " collapsed-nav" : "")">
+  <div class="top-row pl-2 navbar navbar-@(UiState.DarkModeEnabled ? "dark" : "light")">
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="links">
+      <a href="" class="home-link">BlazorTemplate</a>
+      <a href="about">About</a>
+    </div>
+    <div class="auth">
+      @*
+        TODO: Add a login display if you want
+        <LoginDisplay />
+      *@
+    </div>
+  </div>
+
+  <NavMenu Collasped="collapseNavMenu" />
+
+  <div class="main">
+    <div class="content px-4">
+      @Body
+    </div>
+  </div>
+</div>
+
+@code { 
+  private bool collapseNavMenu = true;
+
+  protected override void OnInitialized() {
+    UiState.OnNotifyStateChanged += StateHasChanged;
+  }
+
+  protected override async Task OnAfterRenderAsync(bool firstRender) {
+    if (firstRender) {
+      await UiState.InitializeAsync();
+    }
+  }
+
+  async Task ToggleDarkMode(bool toggleTo) {
+    await UiState.SetDarkModeAsync(toggleTo);
+  }
+
+  private void ToggleNavMenu() {
+    collapseNavMenu = !collapseNavMenu;
+  }
+
+  void IDisposable.Dispose() {
+    UiState.OnNotifyStateChanged -= StateHasChanged;
+  }
+}

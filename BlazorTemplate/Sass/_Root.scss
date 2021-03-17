@@ -1,0 +1,179 @@
+﻿@import '_ColorVariables';
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  // Colors from Bootstrap
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  // SCSS Variables as CSS Variables
+  /* Color Variables */
+  --gray-light: #{$gray-light};
+  --nav-light: #{$nav-light};
+  --nav-dark: #{$nav-dark};
+  --nav-toggler-on-light-bg: #{$nav-toggler-on-light-bg};
+  --hamburger-on-light-bg: #{$hamburger-on-light-bg};
+  --nav-toggler-on-dark-bg: #{$nav-toggler-on-dark-bg};
+  --hamburger-on-dark-bg: #{$hamburger-on-dark-bg};
+  --bg-light: #{$bg-light};
+  --bg-dark: #{$bg-dark};
+  --text-primary: #{$text-primary};
+  --text-dark: #{$text-dark};
+  --text-light: #{$text-light};
+  --text-muted: #{$text-muted};
+  --sidebar-light: #{$sidebar-light};
+  --sidebar-dark: #{$sidebar-dark};
+  // NavMenu Css Colors
+  // MainLayout Css Color
+  --sidebar-primary-theme: #{$sidebar-light};
+  --sidebar-primary-theme--rgb: #{hexToRGB($sidebar-light)};
+  --sidebar-text-primary-theme: #{$text-light};
+  --sidebar-text-primary-theme--rgb: #{hexToRGB($text-light)};
+  --sidebar-primary-alt-theme: #{$sidebar-dark};
+  --sidebar-primary-alt-theme--rgb: #{hexToRGB($sidebar-dark)};
+  --sidebar-width: 250px;
+  // Breakpoints from Bootstrap
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  // Font Family from bootstrap
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  // Colors Gray Theme
+  --gray-primary-theme: #{$gray-light};
+  --gray-primary-theme--rgb: #{hexToRGB($gray-light)};
+  --nav-primary-theme: #{$nav-light};
+  --nav-primary-theme--rgb: #{hexToRGB($nav-light)};
+  --nav-text-primary-theme: #{$text-dark};
+  --nav-text-primary-theme--rgb: #{hexToRGB($text-dark)};
+  --nav-toggler-primary-theme: #{$nav-toggler-on-light-bg};
+  --hamburger-primary-theme: #{$hamburger-on-light-bg};
+  --footer-primary-theme: #{$nav-light};
+  --footer-primary-theme--rgb: #{hexToRGB($nav-light)};
+  --footer-text-primary-theme: #{$text-muted};
+  --footer-text-primary-theme--rgb: #{hexToRGB($text-muted)};
+  --bg-primary-theme: #{$bg-light};
+  --bg-primary-theme--rgb: #{hexToRGB($bg-light)};
+  --text-primary-theme: #{$text-dark};
+  --text-primary-theme--rgb: #{hexToRGB($text-dark)};
+  --text-muted: #{$text-muted};
+  --text-muted--rgb: #{hexToRGB($text-muted)};
+  /* Inverted styles */
+  --nav-primary-invert-theme: #{$nav-dark};
+  --nav-primary-invert-theme--rgb: #{hexToRGB($nav-dark)};
+  --nav-text-primary-invert-theme: #{$text-light};
+  --nav-text-primary-invert-theme--rgb: #{hexToRGB($text-light)};
+  --footer-primary-invert-theme: #{$nav-dark};
+  --footer-primary-invert-theme--rgb: #{hexToRGB($nav-dark)};
+  --footer-text-primary-invert-theme: #{$text-muted};
+  --footer-text-primary-invert-theme--rgb: #{hexToRGB($text-muted)};
+  --bg-primary-invert-theme: #{$bg-dark};
+  --bg-primary-invert-theme--rgb: #{hexToRGB($bg-dark)};
+  --text-primary-invert-theme: #{$text-light};
+  --text-primary-invert-theme--rgb: #{hexToRGB($text-light)};
+  /* Font Family */
+  --font-family-primary-theme: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --navlink-font-family-primary-theme: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+// Theme color overrides
+.dark-theme {
+  // Colors from Bootstrap
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  // Breakpoints from Bootstrap
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  // Font Family from bootstrap
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  // From Template
+  --sidebar-primary-theme: #{$nav-dark};
+  --sidebar-primary-theme--rgb: #{hexToRGB($nav-dark)};
+  --sidebar-text-primary-theme: #{$text-light};
+  --sidebar-text-primary-theme--rgb: #{hexToRGB($text-light)};
+  --sidebar-primary-alt-theme: #{$sidebar-dark};
+  --sidebar-primary-alt-theme--rgb: #{hexToRGB($sidebar-dark)};
+  --gray-primary-theme: #{$gray-light};
+  --gray-primary-theme--rgb: #{hexToRGB($gray-light)};
+  --nav-primary-theme: #{$nav-dark};
+  --nav-primary-theme--rgb: #{hexToRGB($nav-dark)};
+  --nav-toggler-primary-theme: #{$nav-toggler-on-dark-bg};
+  --hamburger-primary-theme: #{$hamburger-on-dark-bg};
+  --nav-text-primary-theme: #{$text-light};
+  --nav-text-primary-theme--rgb: #{$text-light};
+  --footer-primary-theme: #{$nav-light};
+  --footer-primary-theme--rgb: #{hexToRGB($nav-light)};
+  --footer-text-primary-theme: #{$text-muted};
+  --footer-text-primary-theme--rgb: #{hexToRGB($text-muted)};
+  --bg-primary-theme: #{$bg-dark};
+  --bg-primary-theme--rgb: #{hexToRGB($bg-dark)};
+  --text-primary-theme: #{$text-light};
+  --text-primary-theme--rgb: #{hexToRGB($text-light)};
+  --text-muted: #{$text-muted};
+  --text-muted--rgb: #{hexToRGB($text-muted)};
+  /* Inverted styles */
+  --nav-primary-invert-theme: #{$nav-light};
+  --nav-primary-invert-theme--rgb: #{hexToRGB($nav-light)};
+  --nav-text-primary-invert-theme: #{$text-dark};
+  --nav-text-primary-invert-theme--rgb: #{hexToRGB($text-dark)};
+  --footer-primary-invert-theme: #{$nav-light};
+  --footer-primary-invert-theme--rgb: #{hexToRGB($nav-light)};
+  --footer-text-primary-invert-theme: #{$text-muted};
+  --footer-text-primary-invert-theme--rgb: #{hexToRGB($text-muted)};
+  --bg-primary-invert-theme: #{$bg-light};
+  --bg-primary-invert-theme--rgb: #{hexToRGB($bg-light)};
+  --text-primary-invert-theme: #{$text-dark};
+  --text-primary-invert-theme--rgb: #{hexToRGB($text-dark)};
+}
+
+::-webkit-scrollbar {
+  /* For FireFix, try scrollbar-color: https://stackoverflow.com/questions/6165472/custom-css-scrollbar-for-firefox */
+  width: .6rem;
+  height: .6rem;
+  background: rgba(#000, .2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(#888, .6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
