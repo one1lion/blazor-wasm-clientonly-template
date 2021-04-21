@@ -7,7 +7,7 @@
     <li class="nav-item px-3">
       <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
         <span class="oi oi-home" aria-hidden="true"></span> <span class="nav-link-text">Home</span>
-</NavLink>
+      </NavLink>
     </li>
     <li class="nav-item px-3">
       <NavLink class="nav-link" href="counter">
@@ -20,17 +20,18 @@
       </NavLink>
     </li>
   </ul>
+
+  <div class="dark-mode-toggler@(UiState.DarkModeEnabled ? " on" : "")" @onclick:stopPropagation="true">
+    <SliderButton ToggledOn="UiState.DarkModeEnabled"
+                  Height="28px"
+                  Round="true"
+                  LabelText="@($"Dark Mode")"
+                  ToggledOnChanged="ToggleDarkMode"
+                  AddCssClass="nav-link"
+                  @ref="sliderButton" />
+  </div>
 </div>
 
-<div class="dark-mode-toggler@(UiState.DarkModeEnabled ? " on" : "")" @onclick:stopPropagation="true">
-  <SliderButton ToggledOn="UiState.DarkModeEnabled"
-                Height="28px"
-                Round="true"
-                LabelText="@($"Dark Mode")"
-                ToggledOnChanged="ToggleDarkMode"
-                AddCssClass="nav-link"
-                @ref="sliderButton" />
-</div>
 
 @code {
   [Parameter]

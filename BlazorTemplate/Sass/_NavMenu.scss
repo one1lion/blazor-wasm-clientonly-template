@@ -64,11 +64,11 @@
   .dark-mode-toggler {
     position: absolute;
     bottom: 0;
+    width: 100%;
     color: var(--nav-text-primary-theme);
     display: flex;
     align-content: center;
     align-items: center;
-    width: var(--sidebar-width);
     height: 2.5rem;
 
     &:not(.on) {
@@ -83,7 +83,8 @@
       background-color: var(--nav-primary-theme);
       color: var(--nav-text-primary-theme);
       filter: none;
-
+      width: 100%;
+      height: 100%;
       label {
         margin: 0;
         padding: 0;
